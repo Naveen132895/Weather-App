@@ -1,0 +1,69 @@
+<!-- <div>
+  <form (submit)="onFormSubmit($event)">
+    <input placeholder="Enter your city " (input)="city = $event.target.value" />
+  </form>
+  <button (click)="onFormSubmit($event)" type=" submit" class="btn btn-primary">Submit</button>
+</div>
+{{date | date:'E, L LLL'}} -->
+
+<div class="main-container">
+  <div class="img inner-container">
+    <img class="dayimg" src="../../assets/day.jpg" alt="" />
+    <div *ngIf="wind" class="large-citydets">
+      <div class="temp">
+        <h1>{{ temp }}&deg;</h1>
+      </div>
+      <div class="citytime">
+        <h2>{{ city }}</h2>
+        <h4>Sat,3 Aug</h4>
+      </div>
+
+      <div class="weatherimg">
+        <img [src]="iconUrl" />
+        <p>{{ description }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="citydets inner-container">
+    <div class="form-group">
+      <form (submit)="onFormSubmit($event)">
+        <div class="searchbutton">
+          <button class="btn" (click)="onFormSubmit($event)" type=" submit">
+            <svg-icon
+              class="searchsvg"
+              src="../../assets/search.svg"
+            ></svg-icon>
+          </button>
+        </div>
+
+        <input
+          class="form-control transparent-input"
+          placeholder="Enter your city "
+          (input)="city = $event.target.value"
+        />
+      </form>
+      <hr />
+      <div *ngIf="wind" class="dets">
+        <h5>Weather Details</h5>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Humidity</th>
+
+              <td>{{ humidity }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Wind</th>
+              <td>{{ wind }} km/hr</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

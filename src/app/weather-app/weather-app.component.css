@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  flex-direction: row;
+}
+
+.img {
+  height: 100vh;
+  width: 40%;
+}
+
+img {
+  object-fit: cover;
+}
+
+.dayimg {
+  width: 100%;
+}
+
+.inner-container {
+  display: flex;
+  color: white;
+  flex-grow: 1;
+
+}
+
+.citydets {
+  width: 20%;
+  background-color: #7f5a83;
+  background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+
+}
+
+input.transparent-input {
+  background-color: rgba(0, 0, 0, 0) !important;
+  border: none !important;
+  color: white;
+  font-weight: bolder;
+  letter-spacing: 0.2rem;
+  font-size: 1.2rem;
+}
+
+input {
+  margin-left: 5rem;
+  margin-top: 5rem;
+}
+
+.searchbutton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(230, 147, 24, 0.993);
+}
+
+svg {
+  width: 1rem;
+  height: 1rem;
+  fill: rgb(0, 0, 0);
+}
+
+button {
+  margin: 0.5rem;
+}
+
+.btn {
+  outline: none !important;
+}
+
+/* button:focus {
+  outline: 0 !important;
+} */
+:active {
+  outline: none !important;
+}
+
+/*Details*/
+.dets {
+  margin: 6rem;
+  margin-top: 3rem;
+  color: white;
+  width: 100%;
+  padding-right: 3rem;
+}
+
+h5 {
+  padding-bottom: 3rem;
+}
+
+table {
+  color: white;
+  border: none !important;
+  width: 100%;
+
+}
+
+.table tr,
+.table td,
+.table th {
+  border: 0 !important;
+}
+
+.large-citydets {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  width: 50%;
+  height: 13rem;
+  /* border: 5px solid red; */
+  bottom: 2rem;
+  margin-left: 2rem;
+  padding: 2rem;
+}
+
+.large-citydets>div {
+  /* border: 5px solid rgb(179, 164, 37); */
+  margin-right: 4rem;
+
+}
+
+h1 {
+  font-size: 6.5rem;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.citytime,
+.weatherimg {
+  padding-top: 1.8rem;
+}
