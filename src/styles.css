@@ -7,3 +7,38 @@
   font-family: Roboto, "Helvetica Neue", sans-serif;
 
 }
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+  .mobo {
+    display: block !important;
+  }
+
+  body {
+    background: grey;
+  }
+
+  .main-container {
+    display: none !important;
+  }
+
+  .supportmsg {
+    width: fit-content;
+    margin-top: 15rem;
+    margin-left: 1rem;
+    color: white;
+    font-weight: 700;
+    border: 5px solid red;
+  }
+
+  .attention svg {
+    width: 3rem !important;
+    height: 3rem !important;
+    fill: rgb(54, 28, 28);
+  }
+
+  .attention {
+    margin-left: 8rem;
+    margin-bottom: 2rem;
+  }
+}

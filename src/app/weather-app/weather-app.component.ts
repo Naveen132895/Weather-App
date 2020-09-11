@@ -18,25 +18,29 @@ export class WeatherAppComponent implements OnInit {
   description: string;
   iconcode: number;
   iconUrl: string;
-
+  error: String;
   fetchWeather(city: string) {
-    this.weatherservice.getWeather(city).subscribe((response) => {
-      this.setWeatherData(response);
-    });
+    this.weatherservice.getWeather(city).subscribe(
+      (response) => {
+        this.setWeatherData(response);
+      },
+      (error) => {
+        this.error = error;
+      }
+    );
   }
   onFormSubmit(event: any) {
+    this.refresh();
     event.preventDefault();
     this.fetchWeather(this.city.trim());
   }
   setWeatherData(data) {
-    console.log(data);
-
     this.temp = (data.main.temp - 273.15).toFixed(0);
-    let sunsetTime = new Date(data.sys.sunset * 1000);
+    // let sunsetTime = new Date(data.sys.sunset * 1000);
     //console.log(this.temp);
     this.date = new Date();
-    this.feels_like = (data.main.feels_like - 273.15).toFixed(0);
-    this.isDay = this.date.getTime() < sunsetTime.getTime();
+    // this.feels_like = (data.main.feels_like - 273.15).toFixed(0);
+    // this.isDay = this.date.getTime() < sunsetTime.getTime();
     this.wind = Math.round(Number(data.wind.speed) * 1.609);
     this.humidity = data.main.humidity;
     this.city = data.name;
@@ -45,6 +49,10 @@ export class WeatherAppComponent implements OnInit {
     //console.log(this.iconcode);
     this.iconUrl = `http://openweathermap.org/img/w/${this.iconcode}.png`;
     console.log(this.isDay);
+  }
+  refresh() {
+    this.temp = '';
+    this.error = '';
   }
   ngOnInit(): void {}
 }

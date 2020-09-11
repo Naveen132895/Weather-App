@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .main-container {
@@ -139,4 +140,18 @@ h2 {
 .citytime,
 .weatherimg {
   padding-top: 1.8rem;
+}
+
+.error {
+  position: absolute;
+  top: 15rem;
+  margin-left: 5.3rem;
+  width: 17rem;
+
+  color: rgba(4, 253, 241, 0.918);
+}
+
+
+.mobo {
+  display: none;
 }
