@@ -33,18 +33,12 @@
       <form (submit)="onFormSubmit($event)">
         <div class="searchbutton">
           <button class="btn" (click)="onFormSubmit($event)" type=" submit">
-            <svg-icon
-              class="searchsvg"
-              src="../../assets/search.svg"
-            ></svg-icon>
+            <svg-icon class="searchsvg" src="../../assets/search.svg"></svg-icon>
           </button>
         </div>
 
-        <input
-          class="form-control transparent-input"
-          placeholder="Enter your city "
-          (input)="city = $event.target.value"
-        />
+        <input class="form-control transparent-input" placeholder="Enter your city "
+          (input)="city = $event.target.value" />
       </form>
       <hr />
       <div *ngIf="error" class="error">
@@ -61,12 +55,15 @@
           <tbody>
             <tr>
               <th scope="row">Humidity</th>
-
               <td>{{ humidity }}</td>
             </tr>
             <tr>
               <th scope="row">Wind</th>
               <td>{{ wind }} km/hr</td>
+            </tr>
+            <tr>
+              <th scope="row">Feels Like</th>
+              <td>{{ feels_like}}&deg;</td>
             </tr>
           </tbody>
         </table>
