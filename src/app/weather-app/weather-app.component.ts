@@ -20,6 +20,7 @@ export class WeatherAppComponent implements OnInit {
   error: String;
   obj: object;
   fetchWeather(city: string) {
+    console.log(city)
     this.weatherservice.getWeather(city).subscribe(
       (response) => {
         this.setWeatherData(response);
@@ -31,11 +32,13 @@ export class WeatherAppComponent implements OnInit {
       }
     );
   }
+
   onFormSubmit(event: any) {
     this.refresh();
     event.preventDefault();
     this.fetchWeather(this.city.trim());
   }
+
   setWeatherData(data) {
     this.temp = (data.main.temp - 273.15).toFixed(0);
     this.date = new Date();

@@ -1,4 +1,3 @@
-import { environment } from './../../environments/environment.prod';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
@@ -7,15 +6,16 @@ import { pipe, throwError } from 'rxjs';
   providedIn: 'root',
 })
 export class WeatherService {
-  // city = 'Kolkata';
-  // authkey: 'd101e3fb2a47c7a992119c16cffcb218';
+   authkey :  string = 'd3c1450b0f021a1473e7810e627bd664';
+   cityName : string;
   constructor(private http: HttpClient) {}
   getWeather(city: string) {
+    this.cityName = city;
     return this.http
       .get<any>('https://api.openweathermap.org/data/2.5/weather?', {
         params: {
-          q: city,
-          appid: environment.key,
+          q: this.cityName,
+          appid: this.authkey,
         },
       })
       .pipe(catchError(this.handleError));
